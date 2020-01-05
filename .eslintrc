@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:import/typescript"
+  ],
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "rules":  {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/first": 1,
+    "import/named": 1,
+    "import/order": 1,
+    "import/no-unresolved": 1,
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "import/no-self-import": 1,
+    "import/no-unused-modules": 1,
+    "linebreak-style": 0,
+    "no-shadow": 1,
+    "no-console": 1,
+    "no-debugger": 1,
+    "no-plusplus": 0,
+    "no-else-return": 0,
+    "no-unused-vars": 1,
+    "no-nested-ternary": 1,
+    "no-param-reassign": 1,
+    "no-confusing-arrow": 0,
+    "no-trailing-spaces": 1,
+    "no-restricted-globals": 1,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 1,
+    "no-unused-expressions": 0,
+    "prettier/prettier": "error"
+  }
+}
