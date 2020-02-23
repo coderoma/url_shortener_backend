@@ -26,7 +26,6 @@ router.post(
 
       const { email, password } = req.body;
       const foundedUser = await User.findOne({ email });
-
       if (foundedUser) {
         return res.status(400).json({ message: 'User already exists' });
       }
@@ -35,7 +34,7 @@ router.post(
       const user = new User({ email, password: hashedPassword });
 
       await user.save();
-      res.status(201).json({ message: 'User created' });
+      res.status(201).json({ message: 'User created', user });
     } catch (error) {
       res.status(500).json({ message: 'Something went wrong' });
     }
@@ -61,21 +60,16 @@ router.post(
           message: 'Wrong credentials',
         });
       }
-
       const { email, password } = req.body;
-
       const user = await User.findOne({ email });
 
       if (!user) {
-        return res.status(400).json({ message: 'User is not exist' });
+        return res.status(400).json({ message: 'Incorrect data' });
       }
-
       const isMatch = await bcrypt.compare(password, user.password);
-
       if (!isMatch) {
         return res.status(400).json({ message: 'Wrong password' });
       }
-
       const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), {
         expiresIn: '1h',
       });

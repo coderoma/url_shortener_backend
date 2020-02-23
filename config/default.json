@@ -1,5 +1,6 @@
 {
   "port": 5000,
   "jwtSecret": "sedative-payer-overlying",
-  "mongoUri": "mongodb+srv://rrs:reset3143@cluster0-ur61r.mongodb.net/app?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://rrs:DkgjyNCmDr8B7Off@cluster0-ur61r.mongodb.net/test?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
 }
