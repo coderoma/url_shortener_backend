@@ -1,13 +1,13 @@
 import express from 'express';
 import config from 'config';
 import mongoose from 'mongoose';
-import cors from './middleware/cors.middleware';
+import cors from 'cors';
 
 import auth from './routes/auth.routes';
 import link from './routes/link.routes';
 
 const app = express();
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 app.use('/api/auth', auth);
 app.use('/api/link', link);
