@@ -5,12 +5,14 @@ import cors from 'cors';
 
 import auth from './routes/auth.routes';
 import link from './routes/link.routes';
+import redirect from './routes/redirect.routes';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth', auth);
 app.use('/api/link', link);
+app.use('/t', redirect);
 
 const PORT = config.get('port') || 5000;
 
